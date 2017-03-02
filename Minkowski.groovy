@@ -11,7 +11,7 @@ ArrayList<CSG> mink(CSG target, CSG travelingShape){
 		println "Count = "+counter+" of "+target.getPolygons().size()
 		ArrayList<CSG> corners =new ArrayList<CSG>()
 		for(Vertex v:p.vertices){
-			corners.add(travelingShape.transformed(new Transform().translate(v.x,v.y,v.z)))
+			corners.add(travelingShape.transformed(new Transform().translate(v.getX(),v.getY(),v.getZ())))
 		}
 		CSG face = corners.remove(0)
 		face=face.hull(corners)
